@@ -8,12 +8,12 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
 
-    html { scroll-behavior: smooth !important; }
+    html { scroll-behavior: smooth!important; }
     body { font-family: 'Inter', sans-serif; }
-    #signup-section, #privacy-policy { scroll-margin-top: 100px; }
-    .glow { box-shadow: 0 0 20px rgba(245, 158, 11, 0.2); }
+    #signup-section, #privacy-policy, #support { scroll-margin-top: 100px; }
+   .glow { box-shadow: 0 0 20px rgba(245, 158, 11, 0.2); }
 
-    .fade-in { animation: fadeIn 0.4s ease forwards; }
+   .fade-in { animation: fadeIn 0.4s ease forwards; }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
@@ -30,6 +30,9 @@
         Buildr
       </div>
       <div class="flex items-center gap-4">
+        <a href="#support" class="text-xs font-semibold text-zinc-500 hover:text-zinc-100 transition-all">
+          Support
+        </a>
         <a href="#privacy-policy" class="text-xs font-semibold text-zinc-500 hover:text-zinc-100 transition-all">
           Privacy
         </a>
@@ -105,6 +108,16 @@
     </a>
   </section>
 
+  <section id="support" class="max-w-3xl mx-auto px-6 py-24 border-t border-white/5 text-center">
+    <h2 class="text-3xl font-bold text-zinc-100 mb-4 tracking-tight">App Support</h2>
+    <p class="text-sm leading-relaxed text-zinc-500 mb-8">
+      Need help with your account, reporting an issue, or managing a subscription? We are here to help. Reach out to us directly for fast support.
+    </p>
+    <a href="mailto:feedback@Buildr.app" class="inline-block bg-amber-500 text-black font-bold px-8 py-3 rounded-full hover:bg-amber-400 transition-all">
+      Contact Support
+    </a>
+  </section>
+
   <section id="privacy-policy" class="max-w-3xl mx-auto px-6 py-24 border-t border-white/5">
     <h2 class="text-3xl font-bold text-zinc-100 mb-4 tracking-tight">Privacy Policy</h2>
     <p class="text-sm text-zinc-600 mb-8">Last updated: May 2, 2026</p>
@@ -113,23 +126,18 @@
       <p>
         Buildr collects the information needed to run the app and waitlist. If you join the waitlist, we collect your email address so we can contact you about launch updates.
       </p>
-
       <p>
         In the app, Buildr may collect account details, profile information, project details, photos, messages, matches, swipe activity, reports, blocked-user preferences, approximate or precise location if you allow it, and app interaction data.
       </p>
-
       <p>
         We use this data to create accounts, show relevant people and projects, support messaging and matches, improve safety, prevent abuse, provide customer support, and improve the product.
       </p>
-
       <p>
         We use trusted services including Firebase, Google Sign-In, Apple Sign-In, Formspree for waitlist submissions, and Google AdMob for sponsored advertising. AdMob may receive app, device, and ad interaction information needed to serve, measure, and improve ads.
       </p>
-
       <p>
         Buildr does not sell your personal information. You can request access, correction, export, or deletion of your data by contacting us.
       </p>
-
       <p>
         Contact: <a href="mailto:feedback@Buildr.app" class="text-amber-500 hover:text-amber-400">feedback@Buildr.app</a>
       </p>
@@ -138,7 +146,10 @@
 
   <footer class="py-12 px-6 border-t border-white/5 text-center">
     <p class="text-[10px] text-zinc-700 tracking-[0.2em] uppercase font-bold mb-4">Buildr 2026 / Built for doers</p>
-    <a href="#privacy-policy" class="text-xs text-zinc-600 hover:text-amber-500 transition-all">Privacy Policy</a>
+    <div class="flex justify-center gap-4">
+        <a href="#support" class="text-xs text-zinc-600 hover:text-amber-500 transition-all">Support</a>
+        <a href="#privacy-policy" class="text-xs text-zinc-600 hover:text-amber-500 transition-all">Privacy Policy</a>
+    </div>
   </footer>
 
   <script>
