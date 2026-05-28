@@ -4,499 +4,293 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy - Buildr</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root {
-      color-scheme: light dark;
-      --orange: #ff7326;
-      --orange-soft: rgba(255, 115, 38, 0.1);
-      --orange-line: rgba(255, 115, 38, 0.24);
-      --page: #f9f6f2;
-      --card: #ffffff;
-      --raised: #fffaf6;
-      --input: #f4f0eb;
-      --text: #1f1f1f;
-      --muted: #716d68;
-      --faint: #a19a92;
-      --border: #e3ddd6;
-      --shadow: rgba(31, 31, 31, 0.07);
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --page: #1c1c1f;
-        --card: #29292b;
-        --raised: #303033;
-        --input: #38383d;
-        --text: #f2efeb;
-        --muted: #b3aea8;
-        --faint: #807b75;
-        --border: #4a4a4f;
-        --shadow: rgba(0, 0, 0, 0.22);
-      }
-    }
+    html { scroll-behavior: smooth !important; }
+    body { font-family: 'Inter', sans-serif; }
+    section[id] { scroll-margin-top: 96px; }
+    .glow { box-shadow: 0 0 24px rgba(255, 115, 38, 0.28); }
 
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, var(--orange-soft), transparent 34rem),
-        var(--page);
-      color: var(--muted);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: var(--orange); text-decoration: none; font-weight: 700; }
-    a:hover { text-decoration: underline; }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      border-bottom: 1px solid var(--border);
-      background: color-mix(in srgb, var(--page) 88%, transparent);
-      backdrop-filter: blur(18px);
-    }
-
-    .nav-inner {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 14px 22px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--text);
-      font-size: 19px;
+    .policy h2 {
+      color: #f2efeb;
+      font-size: 1.5rem;
+      line-height: 1.2;
       font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    .mark {
-      width: 24px;
-      height: 24px;
-      border-radius: 8px;
-      background: var(--orange);
-      box-shadow: 0 10px 24px rgba(255, 115, 38, 0.32);
-      position: relative;
-    }
-
-    .mark::after {
-      content: "";
-      position: absolute;
-      inset: 6px;
-      border-radius: 5px;
-      border: 2px solid color-mix(in srgb, white 82%, var(--orange));
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      padding: 8px 11px;
-      border-radius: 999px;
-    }
-
-    .nav-links a.primary {
-      color: var(--text);
-      background: var(--card);
-      border: 1px solid var(--border);
-      box-shadow: 0 8px 20px var(--shadow);
-    }
-
-    header {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 64px 22px 34px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 18px;
-      padding: 7px 11px;
-      border: 1px solid var(--orange-line);
-      border-radius: 999px;
-      background: var(--orange-soft);
-      color: var(--orange);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 0;
-      max-width: 760px;
-      color: var(--text);
-      font-size: clamp(38px, 7vw, 68px);
-      line-height: 0.95;
-      letter-spacing: -0.045em;
-    }
-
-    .intro {
-      max-width: 690px;
-      margin: 22px 0 0;
-      font-size: 17px;
-      color: var(--muted);
-    }
-
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 24px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      padding: 8px 11px;
-      border-radius: 999px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 700;
-      box-shadow: 0 8px 20px var(--shadow);
-    }
-
-    main {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 0 22px 64px;
-      display: grid;
-      grid-template-columns: 240px minmax(0, 1fr);
-      gap: 34px;
-      align-items: start;
-    }
-
-    .toc {
-      position: sticky;
-      top: 76px;
-      padding: 16px;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background: color-mix(in srgb, var(--card) 84%, transparent);
-      box-shadow: 0 12px 32px var(--shadow);
-    }
-
-    .toc-title {
-      margin: 0 0 10px;
-      color: var(--text);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .toc a {
-      display: block;
-      padding: 7px 0;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 650;
-    }
-
-    .policy {
-      padding: 28px;
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      background: color-mix(in srgb, var(--card) 92%, transparent);
-      box-shadow: 0 18px 45px var(--shadow);
-    }
-
-    section { scroll-margin-top: 96px; }
-
-    h2 {
-      margin: 42px 0 12px;
-      color: var(--text);
-      font-size: 25px;
-      line-height: 1.15;
       letter-spacing: -0.03em;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
     }
 
-    h2:first-child { margin-top: 0; }
+    .policy h2:first-child { margin-top: 0; }
 
-    h3 {
-      margin: 26px 0 8px;
-      color: var(--text);
-      font-size: 16px;
-      letter-spacing: -0.01em;
+    .policy h3 {
+      color: #f2efeb;
+      font-weight: 700;
+      margin-top: 1.75rem;
+      margin-bottom: 0.5rem;
     }
 
-    p { margin: 0 0 14px; }
-
-    ul {
-      margin: 0 0 18px;
-      padding-left: 20px;
+    .policy p {
+      margin-bottom: 1rem;
+      line-height: 1.75;
     }
 
-    li { margin: 7px 0; }
-
-    strong {
-      color: var(--text);
-      font-weight: 750;
+    .policy ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+      margin-bottom: 1.25rem;
     }
 
-    .note, .contact {
-      margin: 22px 0;
-      padding: 18px;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      background: var(--raised);
+    .policy li {
+      margin-bottom: 0.55rem;
+      line-height: 1.7;
     }
 
-    .contact {
-      border-color: var(--orange-line);
-      background: var(--orange-soft);
+    .policy a {
+      color: #ff7326;
+      font-weight: 700;
     }
 
-    table {
+    .policy a:hover { color: #ff8a45; }
+
+    .policy strong {
+      color: #f2efeb;
+      font-weight: 700;
+    }
+
+    .policy table {
       width: 100%;
-      margin: 18px 0 24px;
       border-collapse: separate;
       border-spacing: 0;
       overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background: var(--card);
-      font-size: 14px;
+      border: 1px solid #4a4a4f;
+      border-radius: 1rem;
+      margin: 1.25rem 0 1.75rem;
+      background: #29292b;
+      font-size: 0.875rem;
     }
 
-    th, td {
-      padding: 13px 14px;
+    .policy th {
       text-align: left;
-      vertical-align: top;
-      border-bottom: 1px solid var(--border);
-    }
-
-    tr:last-child td { border-bottom: 0; }
-
-    th {
-      background: var(--orange-soft);
-      color: var(--orange);
-      font-size: 11px;
-      font-weight: 850;
+      padding: 0.75rem 0.9rem;
+      background: rgba(255, 115, 38, 0.1);
+      color: #ff7326;
+      font-size: 0.68rem;
+      font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      border-bottom: 1px solid #4a4a4f;
     }
 
-    td:first-child {
-      width: 32%;
-      color: var(--text);
-      font-weight: 750;
+    .policy td {
+      text-align: left;
+      padding: 0.85rem 0.9rem;
+      border-bottom: 1px solid rgba(74, 74, 79, 0.7);
+      vertical-align: top;
     }
 
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 28px 22px 42px;
-      text-align: center;
-      color: var(--faint);
-      font-size: 12px;
+    .policy tr:last-child td { border-bottom: 0; }
+
+    .policy td:first-child {
+      color: #f2efeb;
       font-weight: 700;
+      width: 32%;
     }
 
-    @media (max-width: 820px) {
-      main { grid-template-columns: 1fr; }
-      .toc { position: static; }
-      .policy { padding: 20px; border-radius: 20px; }
-      td:first-child { width: auto; }
-      table, thead, tbody, tr, th, td { display: block; }
-      th:nth-child(2) { display: none; }
-      td { border-bottom: 0; padding-top: 10px; }
-      td + td { padding-top: 0; border-bottom: 1px solid var(--border); }
-      tr:last-child td + td { border-bottom: 0; }
+    @media (max-width: 720px) {
+      .policy table, .policy tbody, .policy tr, .policy th, .policy td { display: block; }
+      .policy th:nth-child(2) { display: none; }
+      .policy td { border-bottom: 0; }
+      .policy td + td { padding-top: 0; border-bottom: 1px solid rgba(74, 74, 79, 0.7); }
+      .policy td:first-child { width: auto; padding-bottom: 0.25rem; }
     }
   </style>
 </head>
 
-<body>
-  <nav class="nav" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a class="brand" href="/">
-        <span class="mark" aria-hidden="true"></span>
-        <span>Buildr</span>
+<body class="bg-[#1c1c1f] text-[#b3aea8] antialiased selection:bg-[#ff7326]/30">
+
+  <nav class="fixed top-0 w-full z-50 border-b border-[#4a4a4f]/50 bg-[#1c1c1f]/85 backdrop-blur-md">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 font-extrabold text-[#f2efeb] tracking-tight text-xl">
+        <span class="relative w-7 h-7 rounded-lg glow overflow-hidden bg-gradient-to-br from-[#ff3b30] to-[#ff9500] shadow-black/20">
+          <svg viewBox="0 0 100 100" aria-hidden="true" class="absolute inset-[5px] h-[calc(100%-10px)] w-[calc(100%-10px)]" fill="none" stroke="white" stroke-width="8.2" stroke-linecap="round" stroke-linejoin="round">
+            <g transform="rotate(-40 38 52)">
+              <rect x="24" y="18" width="28" height="68" rx="14"></rect>
+            </g>
+            <g transform="rotate(40 62 52)">
+              <rect x="48" y="18" width="28" height="68" rx="14"></rect>
+            </g>
+          </svg>
+        </span>
+        Buildr
       </a>
-      <div class="nav-links">
-        <a href="/#support">Support</a>
-        <a class="primary" href="/">Home</a>
+
+      <div class="flex items-center gap-4">
+        <a href="/#support" class="text-xs font-semibold text-[#807b75] hover:text-[#f2efeb] transition-all">Support</a>
+        <a href="/privacy.html" class="text-xs font-semibold text-[#f2efeb] bg-[#29292b] px-4 py-2 rounded-full border border-[#4a4a4f] transition-all">Privacy</a>
       </div>
     </div>
   </nav>
 
-  <header>
-    <span class="eyebrow">Legal</span>
-    <h1>Privacy Policy</h1>
-    <p class="intro">This policy explains what Buildr collects, how it is used to power matching, projects, chat, safety, subscriptions, ads, and the controls you have over your information.</p>
-    <div class="meta">
-      <span class="pill">Last updated: May 28, 2026</span>
-      <span class="pill">Applies to: Buildr iOS app and buildrwork.com</span>
+  <header class="pt-36 pb-12 px-6 border-b border-[#4a4a4f]/50">
+    <div class="max-w-3xl mx-auto">
+      <span class="inline-flex items-center mb-6 px-3 py-1.5 rounded-full border border-[#ff7326]/25 bg-[#ff7326]/10 text-[#ff7326] text-[10px] font-extrabold uppercase tracking-[0.18em]">
+        Legal
+      </span>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-[#f2efeb] tracking-tight leading-[0.98] mb-5">
+        Privacy Policy
+      </h1>
+      <p class="text-[#b3aea8] leading-relaxed max-w-2xl">
+        What Buildr collects, how it is used to power matching, projects, chat, safety, subscriptions, ads, and the controls you have over your information.
+      </p>
+      <p class="text-sm text-[#807b75] mt-6">
+        <strong class="text-[#b3aea8]">Last updated:</strong> May 28, 2026
+        <span class="mx-2">/</span>
+        <strong class="text-[#b3aea8]">Applies to:</strong> Buildr iOS app and buildrwork.com
+      </p>
     </div>
   </header>
 
-  <main>
-    <aside class="toc" aria-label="Privacy policy sections">
-      <p class="toc-title">Sections</p>
-      <a href="#who-we-are">Who we are</a>
-      <a href="#data-we-collect">Data we collect</a>
-      <a href="#how-we-use-data">How we use data</a>
-      <a href="#legal-bases">Legal bases</a>
-      <a href="#sharing">Sharing</a>
-      <a href="#ads">Advertising</a>
-      <a href="#retention">Retention</a>
-      <a href="#rights">Your rights</a>
-      <a href="#security">Security</a>
-      <a href="#children">Children</a>
-      <a href="#contact">Contact</a>
-    </aside>
+  <main class="max-w-3xl mx-auto px-6 py-12 text-sm policy">
 
-    <article class="policy">
-      <section id="who-we-are">
-        <h2>Who we are</h2>
-        <p>Buildr is a collaborator-matching app for builders, founders, creators, designers, developers, and project people who want to find people and projects to work with.</p>
-        <p>For privacy questions, data requests, or account support, contact the Buildr team at <a href="mailto:hello@buildrwork.com">hello@buildrwork.com</a>.</p>
-        <div class="note">
-          <strong>Controller:</strong> Buildr is responsible for deciding how personal data is processed for the Buildr app and website. We process personal data in line with UK data protection law and, where applicable, EU GDPR.
-        </div>
-      </section>
+    <section id="who-we-are">
+      <h2>Who we are</h2>
+      <p>Buildr is a collaborator-matching app for builders, founders, creators, designers, developers, and project people who want to find people and projects to work with.</p>
+      <p>For privacy questions, data requests, or account support, contact the Buildr team at <a href="mailto:hello@buildrwork.com">hello@buildrwork.com</a>.</p>
+      <div class="bg-[#29292b] border border-[#4a4a4f] rounded-2xl p-6 my-6">
+        <strong>Controller:</strong> Buildr is responsible for deciding how personal data is processed for the Buildr app and website. We process personal data in line with UK data protection law and, where applicable, EU GDPR.
+      </div>
+    </section>
 
-      <section id="data-we-collect">
-        <h2>Data we collect</h2>
-        <p>Buildr collects the information needed to create profiles, recommend collaborators, support projects, enable chat, keep users safe, and run the app.</p>
+    <section id="data-we-collect">
+      <h2>Data we collect</h2>
+      <p>Buildr collects the information needed to create profiles, recommend collaborators, support projects, enable chat, keep users safe, and run the app.</p>
 
-        <table>
-          <tr><th>Category</th><th>What it includes</th></tr>
-          <tr><td>Account and identity</td><td>Name, email address, authentication identifiers, and sign-in provider details from Apple, Google, email, or phone sign-in where used.</td></tr>
-          <tr><td>Profile content</td><td>Date of birth or age, bio, photos, skills, interests, pronouns, education, intent, availability, experience level, prompts, work-style traits, online status, and social or portfolio links you add.</td></tr>
-          <tr><td>Project content</td><td>Project names, descriptions, categories, images, external links, project status, and skills a project needs.</td></tr>
-          <tr><td>Location</td><td>Your location or derived city when you choose to provide it, plus distance preferences used for discovery. You can control location visibility in Settings.</td></tr>
-          <tr><td>Discovery and interactions</td><td>Likes, passes, super likes, matches, profile visibility settings, paused status, blocked users, reports, and other app activity needed for matching and safety.</td></tr>
-          <tr><td>Messages</td><td>Chat messages, conversation metadata, read status, typing status, deleted conversation state, and message-related notifications.</td></tr>
-          <tr><td>Subscriptions</td><td>Whether you have Buildr Pro and which Pro features are available to your account. Apple handles payment processing, and Buildr does not receive your card details.</td></tr>
-          <tr><td>Advertising and consent</td><td>Ad consent choices, privacy options availability, ad interaction data, device or advertising identifiers where permitted, and information needed to serve or measure ads.</td></tr>
-          <tr><td>Usage and diagnostics</td><td>Crash reports, performance data, device information, app version, and technical logs used to keep Buildr reliable and secure.</td></tr>
-          <tr><td>Website waitlist</td><td>Email addresses submitted through buildrwork.com so we can send launch or product updates.</td></tr>
-        </table>
+      <table>
+        <tr><th>Category</th><th>What it includes</th></tr>
+        <tr><td>Account and identity</td><td>Name, email address, authentication identifiers, and sign-in provider details from Apple, Google, email, or phone sign-in where used.</td></tr>
+        <tr><td>Profile content</td><td>Date of birth or age, bio, photos, skills, interests, pronouns, education, intent, availability, experience level, prompts, work-style traits, online status, and social or portfolio links you add.</td></tr>
+        <tr><td>Project content</td><td>Project names, descriptions, categories, images, external links, project status, and skills a project needs.</td></tr>
+        <tr><td>Location</td><td>Your location or derived city when you choose to provide it, plus distance preferences used for discovery. You can control location visibility in Settings.</td></tr>
+        <tr><td>Discovery and interactions</td><td>Likes, passes, super likes, matches, profile visibility settings, paused status, blocked users, reports, and other app activity needed for matching and safety.</td></tr>
+        <tr><td>Messages</td><td>Chat messages, conversation metadata, read status, typing status, deleted conversation state, and message-related notifications.</td></tr>
+        <tr><td>Subscriptions</td><td>Whether you have Buildr Pro and which Pro features are available to your account. Apple handles payment processing, and Buildr does not receive your card details.</td></tr>
+        <tr><td>Advertising and consent</td><td>Ad consent choices, privacy options availability, ad interaction data, device or advertising identifiers where permitted, and information needed to serve or measure ads.</td></tr>
+        <tr><td>Usage and diagnostics</td><td>Crash reports, performance data, device information, app version, and technical logs used to keep Buildr reliable and secure.</td></tr>
+        <tr><td>Website waitlist</td><td>Email addresses submitted through buildrwork.com so we can send launch or product updates.</td></tr>
+      </table>
 
-        <p>Some profile details you choose to add, such as photos, pronouns, interests, or links, may reveal information about you. You control what you add and can edit or remove most profile content in the app.</p>
-      </section>
+      <p>Some profile details you choose to add, such as photos, pronouns, interests, or links, may reveal information about you. You control what you add and can edit or remove most profile content in the app.</p>
+    </section>
 
-      <section id="how-we-use-data">
-        <h2>How we use your data</h2>
-        <ul>
-          <li>To create, secure, and manage your account.</li>
-          <li>To build your profile and show it in discovery according to your visibility settings.</li>
-          <li>To recommend people and projects using signals such as skills, interests, location, availability, preferences, and activity.</li>
-          <li>To create matches and run real-time chat.</li>
-          <li>To send match, message, project, and account notifications when enabled.</li>
-          <li>To manage Buildr Pro access and remove ads for Pro subscribers.</li>
-          <li>To show ads to users who are not subscribed to Buildr Pro.</li>
-          <li>To process reports, blocks, moderation checks, and other safety actions.</li>
-          <li>To diagnose crashes, prevent abuse, fix bugs, and improve Buildr.</li>
-          <li>To comply with legal obligations and enforce our terms.</li>
-        </ul>
-      </section>
+    <section id="how-we-use-data">
+      <h2>How we use your data</h2>
+      <ul>
+        <li>To create, secure, and manage your account.</li>
+        <li>To build your profile and show it in discovery according to your visibility settings.</li>
+        <li>To recommend people and projects using signals such as skills, interests, location, availability, preferences, and activity.</li>
+        <li>To create matches and run real-time chat.</li>
+        <li>To send match, message, project, and account notifications when enabled.</li>
+        <li>To manage Buildr Pro access and remove ads for Pro subscribers.</li>
+        <li>To show ads to users who are not subscribed to Buildr Pro.</li>
+        <li>To process reports, blocks, moderation checks, and other safety actions.</li>
+        <li>To diagnose crashes, prevent abuse, fix bugs, and improve Buildr.</li>
+        <li>To comply with legal obligations and enforce our terms.</li>
+      </ul>
+    </section>
 
-      <section id="legal-bases">
-        <h2>Legal bases for processing</h2>
-        <p>Where UK or EU data protection law applies, we rely on these legal bases:</p>
-        <ul>
-          <li><strong>Contract:</strong> to provide the Buildr service you sign up for, including profiles, matching, projects, chat, settings, and subscriptions.</li>
-          <li><strong>Consent:</strong> for optional permissions such as push notifications, location access, and personalised advertising or tracking where required.</li>
-          <li><strong>Legitimate interests:</strong> to keep Buildr secure, prevent abuse, improve the app, troubleshoot issues, and understand whether features work well.</li>
-          <li><strong>Legal obligation:</strong> where we need to retain, disclose, or process information to comply with the law.</li>
-        </ul>
-      </section>
+    <section id="legal-bases">
+      <h2>Legal bases for processing</h2>
+      <ul>
+        <li><strong>Contract:</strong> to provide profiles, matching, projects, chat, settings, and subscriptions.</li>
+        <li><strong>Consent:</strong> for optional permissions such as push notifications, location access, and personalised advertising or tracking where required.</li>
+        <li><strong>Legitimate interests:</strong> to keep Buildr secure, prevent abuse, improve the app, troubleshoot issues, and understand whether features work well.</li>
+        <li><strong>Legal obligation:</strong> where we need to retain, disclose, or process information to comply with the law.</li>
+      </ul>
+    </section>
 
-      <section id="sharing">
-        <h2>Sharing and third-party services</h2>
-        <p>We do not sell your personal data. We share information when it is needed to provide Buildr, show your profile or projects to other users, process subscriptions, deliver notifications, operate ads, or keep the service safe.</p>
+    <section id="sharing">
+      <h2>Sharing and third-party services</h2>
+      <p>We do not sell your personal data. We share information when needed to provide Buildr, show your profile or projects to other users, process subscriptions, deliver notifications, operate ads, or keep the service safe.</p>
 
-        <table>
-          <tr><th>Provider</th><th>Purpose</th></tr>
-          <tr><td>Google Firebase</td><td>Authentication, Firestore database, file storage for photos and media, app infrastructure, and crash reporting.</td></tr>
-          <tr><td>Apple Sign-In and Google Sign-In</td><td>Optional sign-in methods and authentication identifiers.</td></tr>
-          <tr><td>Apple StoreKit</td><td>Processing Buildr Pro subscriptions and subscription status.</td></tr>
-          <tr><td>Apple Push Notification service</td><td>Delivering push notifications for matches, messages, and app updates.</td></tr>
-          <tr><td>Google AdMob</td><td>Serving, measuring, and improving ads for users who are not subscribed to Buildr Pro.</td></tr>
-          <tr><td>Google User Messaging Platform</td><td>Collecting and managing advertising consent and ad privacy choices where required.</td></tr>
-          <tr><td>Giphy</td><td>Providing GIF search or GIF content if the in-app GIF picker is used.</td></tr>
-          <tr><td>Formspree</td><td>Processing website waitlist or contact form submissions.</td></tr>
-        </table>
+      <table>
+        <tr><th>Provider</th><th>Purpose</th></tr>
+        <tr><td>Google Firebase</td><td>Authentication, Firestore database, file storage for photos and media, app infrastructure, and crash reporting.</td></tr>
+        <tr><td>Apple Sign-In and Google Sign-In</td><td>Optional sign-in methods and authentication identifiers.</td></tr>
+        <tr><td>Apple StoreKit</td><td>Processing Buildr Pro subscriptions and subscription status.</td></tr>
+        <tr><td>Apple Push Notification service</td><td>Delivering push notifications for matches, messages, and app updates.</td></tr>
+        <tr><td>Google AdMob</td><td>Serving, measuring, and improving ads for users who are not subscribed to Buildr Pro.</td></tr>
+        <tr><td>Google User Messaging Platform</td><td>Collecting and managing advertising consent and ad privacy choices where required.</td></tr>
+        <tr><td>Giphy</td><td>Providing GIF search or GIF content if the in-app GIF picker is used.</td></tr>
+        <tr><td>Formspree</td><td>Processing website waitlist or contact form submissions.</td></tr>
+      </table>
 
-        <p>Some providers may process data outside the UK or EEA. Where international transfers happen, we rely on appropriate safeguards such as standard contractual clauses or equivalent legal mechanisms.</p>
-      </section>
+      <p>Some providers may process data outside the UK or EEA. Where international transfers happen, we rely on appropriate safeguards such as standard contractual clauses or equivalent legal mechanisms.</p>
+    </section>
 
-      <section id="ads">
-        <h2>Advertising and tracking</h2>
-        <p>Buildr may show ads to users who are not subscribed to Buildr Pro. Ads are supplied through Google AdMob. Depending on your region and device settings, we may ask for advertising consent through Google's consent tools and Apple's App Tracking Transparency prompt.</p>
-        <p>If you allow tracking, an advertising identifier and related app or ad interaction data may be used to personalise ads and measure performance. If you decline, you may still see ads, but they should be less personalised.</p>
-        <p>You can change tracking permission in iOS under <strong>Settings &gt; Privacy &amp; Security &gt; Tracking</strong>. Where available, you can also manage ad privacy choices in Buildr under <strong>Settings &gt; Ad Privacy Choices</strong>. Subscribing to Buildr Pro removes ads in the app.</p>
-      </section>
+    <section id="ads">
+      <h2>Advertising and tracking</h2>
+      <p>Buildr may show ads to users who are not subscribed to Buildr Pro. Ads are supplied through Google AdMob. Depending on your region and device settings, we may ask for advertising consent through Google's consent tools and Apple's App Tracking Transparency prompt.</p>
+      <p>If you allow tracking, an advertising identifier and related app or ad interaction data may be used to personalise ads and measure performance. If you decline, you may still see ads, but they should be less personalised.</p>
+      <p>You can change tracking permission in iOS under <strong>Settings &gt; Privacy &amp; Security &gt; Tracking</strong>. Where available, you can also manage ad privacy choices in Buildr under <strong>Settings &gt; Ad Privacy Choices</strong>. Subscribing to Buildr Pro removes ads in the app.</p>
+    </section>
 
-      <section id="retention">
-        <h2>How long we keep your data</h2>
-        <p>We keep your personal data while your account is active and for as long as needed to provide Buildr. If you delete your account, we delete or anonymise personal data associated with your account, except where limited retention is needed for legal, security, fraud prevention, dispute, backup, or safety reasons.</p>
-        <p>Reports, block records, moderation records, and abuse-prevention data may be kept where needed to protect users. Crash and diagnostic data is kept only for as long as reasonably needed to troubleshoot and improve the app.</p>
-      </section>
+    <section id="retention">
+      <h2>How long we keep your data</h2>
+      <p>We keep your personal data while your account is active and for as long as needed to provide Buildr. If you delete your account, we delete or anonymise personal data associated with your account, except where limited retention is needed for legal, security, fraud prevention, dispute, backup, or safety reasons.</p>
+      <p>Reports, block records, moderation records, and abuse-prevention data may be kept where needed to protect users. Crash and diagnostic data is kept only for as long as reasonably needed to troubleshoot and improve the app.</p>
+    </section>
 
-      <section id="rights">
-        <h2>Your rights and controls</h2>
-        <p>Depending on where you live, you may have rights to access, correct, delete, export, restrict, or object to processing of your personal data. You may also withdraw consent where processing is based on consent.</p>
-        <ul>
-          <li>You can edit most profile and project information directly in the app.</li>
-          <li>You can control online status, location visibility, profile visibility, discovery distance, notifications, and paused status in Settings.</li>
-          <li>You can download a copy of your account data from <strong>Settings &gt; Download My Data</strong>.</li>
-          <li>You can delete your account from <strong>Settings &gt; Delete Account</strong>.</li>
-          <li>You can manage ad privacy choices in Settings where this option is required or available.</li>
-          <li>You can contact <a href="mailto:hello@buildrwork.com">hello@buildrwork.com</a> for privacy requests or questions.</li>
-        </ul>
-        <p>If you are unhappy with how your data is handled, you can contact us first. You may also complain to the UK Information Commissioner's Office at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a> or to your local EU supervisory authority.</p>
-      </section>
+    <section id="rights">
+      <h2>Your rights and controls</h2>
+      <p>Depending on where you live, you may have rights to access, correct, delete, export, restrict, or object to processing of your personal data. You may also withdraw consent where processing is based on consent.</p>
+      <ul>
+        <li>You can edit most profile and project information directly in the app.</li>
+        <li>You can control online status, location visibility, profile visibility, discovery distance, notifications, and paused status in Settings.</li>
+        <li>You can download a copy of your account data from <strong>Settings &gt; Download My Data</strong>.</li>
+        <li>You can delete your account from <strong>Settings &gt; Delete Account</strong>.</li>
+        <li>You can manage ad privacy choices in Settings where this option is required or available.</li>
+        <li>You can contact <a href="mailto:hello@buildrwork.com">hello@buildrwork.com</a> for privacy requests or questions.</li>
+      </ul>
+      <p>If you are unhappy with how your data is handled, you can contact us first. You may also complain to the UK Information Commissioner's Office at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a> or to your local EU supervisory authority.</p>
+    </section>
 
-      <section id="security">
-        <h2>Security</h2>
-        <p>We use technical and organisational safeguards to protect your information, including secure authentication, access controls, encrypted connections, Firebase security features, and platform protections provided by Apple and Google. No online service can guarantee absolute security, but we work to limit access and reduce risk.</p>
-      </section>
+    <section id="security">
+      <h2>Security</h2>
+      <p>We use technical and organisational safeguards to protect your information, including secure authentication, access controls, encrypted connections, Firebase security features, and platform protections provided by Apple and Google. No online service can guarantee absolute security, but we work to limit access and reduce risk.</p>
+    </section>
 
-      <section id="children">
-        <h2>Children</h2>
-        <p>Buildr is intended for adults aged 18 and older. You must meet this age requirement to create an account. We do not knowingly collect personal data from anyone under 18. If you believe someone under 18 has created an account, contact us so we can review and remove it where appropriate.</p>
-      </section>
+    <section id="children">
+      <h2>Children</h2>
+      <p>Buildr is intended for adults aged 18 and older. You must meet this age requirement to create an account. We do not knowingly collect personal data from anyone under 18. If you believe someone under 18 has created an account, contact us so we can review and remove it where appropriate.</p>
+    </section>
 
-      <section id="changes">
-        <h2>Changes to this policy</h2>
-        <p>We may update this policy from time to time. When we do, we will update the date at the top of this page. If changes are significant, we may also provide notice in the app or by email.</p>
-      </section>
+    <section id="changes">
+      <h2>Changes to this policy</h2>
+      <p>We may update this policy from time to time. When we do, we will update the date at the top of this page. If changes are significant, we may also provide notice in the app or by email.</p>
+    </section>
 
-      <section id="contact" class="contact">
-        <h2>Contact us</h2>
-        <p>Questions about this policy or your data?</p>
-        <p><strong>Buildr Privacy</strong><br>
+    <section id="contact" class="bg-[#ff7326]/10 border border-[#ff7326]/25 rounded-2xl p-7 mt-12">
+      <h2 class="!mt-0">Contact us</h2>
+      <p>Questions about this policy or your data?</p>
+      <p class="!mb-0">
+        <strong>Buildr Privacy</strong><br>
         Email: <a href="mailto:hello@buildrwork.com">hello@buildrwork.com</a><br>
-        Website: <a href="https://buildrwork.com" target="_blank" rel="noopener">buildrwork.com</a></p>
-      </section>
-    </article>
+        Website: <a href="https://buildrwork.com" target="_blank" rel="noopener">buildrwork.com</a>
+      </p>
+    </section>
+
   </main>
 
-  <footer>
-    <p>Buildr 2026 / Privacy Policy</p>
+  <footer class="py-12 px-6 border-t border-[#4a4a4f]/50 text-center">
+    <p class="text-[10px] text-[#807b75] tracking-[0.2em] uppercase font-extrabold mb-4">Buildr 2026 / Privacy Policy</p>
+    <div class="flex justify-center gap-4">
+      <a href="/#support" class="text-xs text-[#807b75] hover:text-[#ff7326] transition-all">Support</a>
+      <a href="/privacy.html" class="text-xs text-[#807b75] hover:text-[#ff7326] transition-all">Privacy Policy</a>
+    </div>
   </footer>
+
 </body>
 </html>
